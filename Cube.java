@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Cube {
@@ -57,6 +58,19 @@ public class Cube {
 		right = new Face(rightColors);
 		left = new Face(leftColors);
 		
+	}
+	
+	// function to get all the faces with the colors
+	public ArrayList<Face> getFaces() {
+		
+		ArrayList<Face> faces = new ArrayList<Face>();
+		faces.add(front);
+		faces.add(back);
+		faces.add(up);
+		faces.add(down);
+		faces.add(right);
+		faces.add(left);		
+		return faces;
 	}
 	
 	// Method that returns true if the cube is complete (all faces with same colors)
@@ -288,11 +302,11 @@ public class Cube {
 		up.setLeftRow(tempRow, false);
 	}
 
-	// Method that prints the current state of the cube
+	// Method that prints the current state of the cube as ASCII characters
 	public void printCurrentCube(){
 	   /* Model of what this method is printing:
 		* 
-		*              R | R | R
+		*               R | R | R
 		*   	       -----------
 		*   		    R | R | R
 		*   	       -----------
@@ -406,7 +420,7 @@ public class Cube {
 		// if the lower edge is not the correct color
 		if(!upDownRow[1].equals(up.getCenterColor())){
 			
-			String[] frontUpRow = front.getUpRow(); 
+			//String[] frontUpRow = front.getUpRow(); 
 			// TODO: create a method that given two colors, finds an edge that has the two colors
 		}
 	}

@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 public class Face {
 	Square[][] cubeFace = new Square[3][3];
 	
@@ -230,6 +232,20 @@ public class Face {
 			}
 		}
 		return true;
+	}
+	
+	// Method to get the real Color of the whole face
+	public Color[][] getWholeFaceColor(){
+		
+		Color[][] colors = new Color[3][3];
+		for(int i = 0; i < colors.length; i++) {
+			for(int j = 0; j < colors[0].length; j++) {
+				
+				colors[i][j] = cubeFace[i][j].getRealColor();
+			}
+		}
+		
+		return colors;
 	}
 	
 	// Method that prints a face of the cube
